@@ -1,3 +1,6 @@
 [submodule "anos-binutils-2.42"]
 	path = anos-binutils-2.42
 	url = https://github.com/roscopeco/anos-binutils-2.42
+[submodule "anos-newlib-4.5.0.20241231"]
+	path = anos-newlib-4.5.0.20241231
+	url = https://github.com/roscopeco/anos-newlib-4.5.0.20241231.git
