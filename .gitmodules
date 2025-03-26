@@ -4,3 +4,6 @@
 [submodule "anos-newlib-4.5.0.20241231"]
 	path = anos-newlib-4.5.0.20241231
 	url = https://github.com/roscopeco/anos-newlib-4.5.0.20241231.git
+[submodule "anos-gcc"]
+	path = anos-gcc
+	url = https://github.com/roscopeco/anos-gcc.git
