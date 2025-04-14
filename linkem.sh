@@ -1,7 +1,6 @@
 #!/bin/bash
 
 component_dirs='anos-binutils-2.42 anos-gcc anos-newlib-4.5.0.20241231'
-#component_dirs='binutils-2.18.50 gcc-4.2.2 gdb-6.8'
 unified_src=srcw
 
 mkdir -p ${unified_src}
