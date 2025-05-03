@@ -23,6 +23,17 @@ toolchain first! See instructions 👇
 
 ### Building
 
+#### Prerequisites
+
+You'll need some packages installed. Install from your package manager of
+choice if you don't already have them:
+
+* libmpc-dev
+* libmpfr-dev
+* libgmp-dev
+* texinfo
+* bison
+
 #### Fetch submodules
 
 ```shell
