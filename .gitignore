@@ -1,5 +1,5 @@
 srcw
-build-all
+build-*
 test.elf
 test.bin
 
