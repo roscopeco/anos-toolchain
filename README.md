@@ -62,8 +62,40 @@ cd build-all
 
 #### Configure
 
+##### x86_64
+
 ```shell
 ../srcw/configure --target=x86_64-elf-anos --enable-languages=c,c++ --with-newlib --prefix="$HOME/opt/cross-anos" --disable-debug --disable-dependency-tracking --disable-silent-rules --disable-nls --with-debug-prefix-map="../../../srcw='$(readlink -f ..)/srcw'" --with-debug-prefix-map="../../../../srcw='$(readlink -f ..)/srcw'" --with-debug-prefix-map="../../../../../srcw='$(readlink -f ..)/srcw'"
+```
+
+> [!WARNING]
+> If you're on macOS there's a reasonable chance you'll hit errors when building with Apple clang. You'll 
+> save yourself some pain if you just brew install gcc (and build dependencies) and use that to build the
+> toolchain. 
+>
+> You'll know you've hit this if you see errors coming from `stdio.h` and other standard includes early
+> in the build. At time of writing, GCC needs some things updating (e.g. `zlib`) which is a painful process,
+> so run this instead:
+
+```shell
+brew install gcc@14 gmp mpfr libmpc
+
+CC=$(which gcc-14) ../srcw/configure --target=x86_64-elf-anos --enable-languages=c,c++ --with-newlib --prefix="$HOME/opt/cross-anos" --disable-debug --disable-dependency-tracking --disable-silent-rules --disable-nls --with-debug-prefix-map="../../../srcw='$(readlink -f ..)/srcw'" --with-debug-prefix-map="../../../../srcw='$(readlink -f ..)/srcw'" --with-debug-prefix-map="../../../../../srcw='$(readlink -f ..)/srcw'" --with-gmp=$(brew prefix gmp) --with-mpfr=$(brew --prefix mpfr) --with-mpc=$(brew --prefix libmpc)$
+```
+
+##### riscv64
+
+To build for riscv64, simply change the `--target` option to `riscv64-elf-anos`, i.e.:
+
+```shell
+../srcw/configure --target=riscv64-elf-anos --enable-languages=c,c++ --with-newlib --prefix="$HOME/opt/cross-anos" --disable-debug --disable-dependency-tracking --disable-silent-rules --disable-nls --with-debug-prefix-map="../../../srcw='$(readlink -f ..)/srcw'" --with-debug-prefix-map="../../../../srcw='$(readlink -f ..)/srcw'" --with-debug-prefix-map="../../../../../srcw='$(readlink -f ..)/srcw'"
+```
+
+> [!WARNING]
+> The same caveat as above applies when building on macOS. To use GCC instead:
+
+```shell
+CC=$(which gcc-14) ../srcw/configure --target=riscv64-elf-anos --enable-languages=c,c++ --with-newlib --prefix="$HOME/opt/cross-anos" --disable-debug --disable-dependency-tracking --disable-silent-rules --disable-nls --with-debug-prefix-map="../../../srcw='$(readlink -f ..)/srcw'" --with-debug-prefix-map="../../../../srcw='$(readlink -f ..)/srcw'" --with-debug-prefix-map="../../../../../srcw='$(readlink -f ..)/srcw'" --with-gmp=$(brew prefix gmp) --with-mpfr=$(brew --prefix mpfr) --with-mpc=$(brew --prefix libmpc)$
 ```
 
 #### Build (takes a while)
