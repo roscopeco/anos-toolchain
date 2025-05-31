@@ -15,8 +15,9 @@ This is a custom Binutils / GCC toolchain for
 [Anos](https://github.com/roscopeco/anos), with libc supplied
 by Newlib with a custom Anos-specific `libgloss`.
 
-Currently, only `x86_64` is supported, but eventually
-we'll support riscv as well.
+Currently, `x86_64` is supported well enough to build base
+system binaries as hosted code. RISC-V support is still a 
+work-in-progress. 
 
 If you want to build Anos, you will need to build this
 toolchain first! See instructions 👇
