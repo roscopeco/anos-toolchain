@@ -34,6 +34,7 @@ choice if you don't already have them:
 * libgmp-dev
 * texinfo
 * bison
+* flex
 
 #### Fetch submodules
 
