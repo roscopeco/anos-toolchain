@@ -36,6 +36,29 @@ choice if you don't already have them:
 * bison
 * flex
 
+If you're on an M-series Mac and install with homebrew:
+
+```shell
+brew install libmpc mpfr gmp
+```
+
+> [!NOTE]
+> You _probably_ don't need to install texinfo, bison and flex
+> but they are available - though keg only so you may need to link
+> them by hand. Homebrew will show you the commands you need.
+
+If you haven't already, you'll need to ensure the homebrew paths
+are included in `CPATH` and `LIBRARY_PATH` too. This shouldn't
+be needed on Intel macs.
+
+```shell
+export CPATH=$HOMEBREW_PREFIX/include:$CPATH
+```
+
+```shell
+export LIBRARY_PATH=$HOMEBREW_PREFIX/lib:$LIBRARY_PATH
+```
+
 #### Fetch submodules
 
 ```shell
