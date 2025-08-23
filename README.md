@@ -105,7 +105,7 @@ cd build-all
 ```shell
 brew install gcc@14 gmp mpfr libmpc
 
-CC=$(which gcc-14) ../srcw/configure --target=x86_64-elf-anos --enable-languages=c,c++ --with-newlib --prefix="$HOME/opt/cross-anos" --disable-debug --disable-dependency-tracking --disable-silent-rules --disable-nls --with-debug-prefix-map="../../../srcw='$(readlink -f ..)/srcw'" --with-debug-prefix-map="../../../../srcw='$(readlink -f ..)/srcw'" --with-debug-prefix-map="../../../../../srcw='$(readlink -f ..)/srcw'" --with-gmp=$(brew prefix gmp) --with-mpfr=$(brew --prefix mpfr) --with-mpc=$(brew --prefix libmpc)$
+CC=$(which gcc-14) ../srcw/configure --target=x86_64-elf-anos --enable-languages=c,c++ --with-newlib --prefix="$HOME/opt/cross-anos" --disable-debug --disable-dependency-tracking --disable-silent-rules --disable-nls --with-debug-prefix-map="../../../srcw='$(readlink -f ..)/srcw'" --with-debug-prefix-map="../../../../srcw='$(readlink -f ..)/srcw'" --with-debug-prefix-map="../../../../../srcw='$(readlink -f ..)/srcw'" --with-gmp=$(brew --prefix gmp) --with-mpfr=$(brew --prefix mpfr) --with-mpc=$(brew --prefix libmpc)$
 ```
 
 ##### riscv64
