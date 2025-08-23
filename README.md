@@ -35,6 +35,7 @@ choice if you don't already have them:
 * texinfo
 * bison
 * flex
+* nasm
 
 If you're on an M-series Mac and install with homebrew:
 
